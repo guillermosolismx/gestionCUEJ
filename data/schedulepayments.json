@@ -1,0 +1,19 @@
+{
+  "initialBalance": 67830.38,
+  "totalAmount": 7212.98,
+  "finalBalance": 60617.4,
+  "payments": [
+    {
+      "id": "id-t7ln2qele",
+      "beneficiary": "Mtro. Felipe Fernández Fourzan",
+      "concept": "SERVICIOS EDUCATIVOS",
+      "amount": 5526.83
+    },
+    {
+      "id": "id-u6dymx4zp",
+      "beneficiary": "Mtro. David Román Jiménez López",
+      "concept": "SERVICIOS EDUCATIVOS",
+      "amount": 1686.15
+    }
+  ]
+}

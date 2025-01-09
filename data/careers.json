@@ -1,0 +1,858 @@
+{
+  "careers": [
+    {
+      "id": "abc9e3b3-56fb-4f1a-ade6-476c1ca32e2b",
+      "name": "Licenciatura en Derecho",
+      "payperhour": "$135.00",
+      "grades": [
+        {
+          "id": "189218b8-cfbe-44ca-83f0-8e387547fbfc",
+          "name": "Primer Cuatrimestre",
+          "subjects": [
+            {
+              "id": "a810d3c3-4a42-4f01-bfc1-fae1375b882b",
+              "name": "Introducción al estudio del Derecho"
+            },
+            {
+              "id": "2e9d57f4-433d-43d1-9541-545f603c893f",
+              "name": "Derecho Civil: Parte general y Personas."
+            },
+            {
+              "id": "08027115-45fb-4818-a2aa-2d36386fbe65",
+              "name": "Teoría General del Estado."
+            },
+            {
+              "id": "d71c575d-0800-4275-9eae-aa0174af04d2",
+              "name": "Derecho Romano."
+            },
+            {
+              "id": "cdd75698-34b4-48d5-b6c2-97223d80c185",
+              "name": "Retórica y Oratoria."
+            },
+            {
+              "id": "e1418eba-4c7e-409e-ab4c-399a27f05a7d",
+              "name": "Derechos Humanos."
+            }
+          ]
+        },
+        {
+          "id": "bc8ba7ba-41cd-42c4-8e92-ae07f1751aa2",
+          "name": "Segundo Cuatrimestre",
+          "subjects": [
+            {
+              "id": "0a314136-0b8d-4d32-80cf-26ff86821d04",
+              "name": "Técnicas de investigación jurídica."
+            },
+            {
+              "id": "5fb5263e-255e-4429-99b7-cfff7dbb6ce8",
+              "name": "Derecho civil: familia."
+            },
+            {
+              "id": "b15104ec-e34c-4f0f-8dcd-47b2d52c3b80",
+              "name": "Ciencia política."
+            },
+            {
+              "id": "37e1baec-4c18-4566-8fca-2d1cf1913ce4",
+              "name": "Historia del derecho en México."
+            },
+            {
+              "id": "81f11444-34a4-4b4b-8ba8-82220a587fff",
+              "name": "Argumentación e interpretación jurídica."
+            },
+            {
+              "id": "2b83cafe-29d9-4cc5-9ec1-60201a7805cc",
+              "name": "Teoría general del proceso."
+            }
+          ]
+        },
+        {
+          "id": "dfb9b163-7d38-4ba6-a1fb-df70677222e3",
+          "name": "Tercer Cuatrimestre",
+          "subjects": [
+            {
+              "id": "927f1529-4a00-42f1-8719-ae3f57d399e8",
+              "name": "Teoría general del derecho penal."
+            },
+            {
+              "id": "4c8a561e-ffcb-4f84-a6c2-51e6dfa8a4f8",
+              "name": "Derecho civil: bienes y sucesiones."
+            },
+            {
+              "id": "dbaa691e-785a-4342-9acb-96e65836327f",
+              "name": "Derecho administrativo."
+            },
+            {
+              "id": "aa975e18-3477-4a63-8f37-fa5ec92de1ab",
+              "name": "Derecho mercantil."
+            },
+            {
+              "id": "20f0a685-7c6b-41ec-8041-fdbeea73277e",
+              "name": "Técnicas de litigio oral."
+            },
+            {
+              "id": "f21d5fed-c65f-4393-a65a-fb58d35a71a5",
+              "name": "Derecho constitucional."
+            }
+          ]
+        },
+        {
+          "id": "1f7fd118-a1c6-4c15-971e-a26b0caa2af8",
+          "name": "Cuarto Cuatrimestre",
+          "subjects": [
+            {
+              "id": "3289a6ca-b04a-44e7-b779-fe1a7b638966",
+              "name": "Estudio de los delitos."
+            },
+            {
+              "id": "53dc4259-be2c-478b-a0f6-eeeea5e14bb2",
+              "name": "Derecho civil: obligaciones."
+            },
+            {
+              "id": "e7844e49-c846-4941-826a-40f9edb7fcde",
+              "name": "Actos administrativos."
+            },
+            {
+              "id": "71444948-637c-4626-9c0a-4514131debe8",
+              "name": "Títulos y operaciones de crédito."
+            },
+            {
+              "id": "559a4f4e-08f3-43d1-b40c-ffa53815f913",
+              "name": "Medios alternos de solución de controversias."
+            },
+            {
+              "id": "9637178a-2f84-4427-937b-4c320d6c78c3",
+              "name": "Sociología jurídica."
+            }
+          ]
+        },
+        {
+          "id": "17bb32b7-5961-45da-a95d-7c65f3d00dea",
+          "name": "Quinto Cuatrimestre",
+          "subjects": [
+            {
+              "id": "0e879194-d7f4-4f56-ad42-d4415db1d38a",
+              "name": "Sistema penal acusatorio."
+            },
+            {
+              "id": "6259a25c-18ea-4cd0-973e-b9cb2779f082",
+              "name": "Derecho civil: contratos."
+            },
+            {
+              "id": "da01e17a-0f8c-470b-934f-a10f7eba560f",
+              "name": "Derecho electoral."
+            },
+            {
+              "id": "6c24128d-3043-4c2d-9473-3028690dac21",
+              "name": "Contratos mercantiles."
+            },
+            {
+              "id": "5038a791-0f64-4cd9-9f1b-483a11777cd3",
+              "name": "Administración de justicia y jurisprudencia."
+            },
+            {
+              "id": "00785409-de1d-4694-bf12-6b491c668088",
+              "name": "Derecho internacional privado."
+            }
+          ]
+        },
+        {
+          "id": "d6945c6b-ce5c-46b4-bd5b-001af153d801",
+          "name": "Sexto Cuatrimestre",
+          "subjects": [
+            {
+              "id": "c2a445ec-2e97-4449-902a-86fec2306dee",
+              "name": "Informática jurídica."
+            },
+            {
+              "id": "0747a129-fc11-47c5-be53-aa53745a1de4",
+              "name": "Derecho procesal civil."
+            },
+            {
+              "id": "253e9ef4-437b-4926-ac90-980a6bd0b617",
+              "name": "Derecho Individual del trabajo."
+            },
+            {
+              "id": "0cc4eb1a-08b5-4ca8-950b-3325021a5c71",
+              "name": "Derecho bancario bursátil."
+            },
+            {
+              "id": "5a65b3cf-4620-46cd-85ee-90c5761193cb",
+              "name": "Derecho a la transparencia y acceso a la Información Pública."
+            }
+          ]
+        },
+        {
+          "id": "7bd9adf3-7f25-4fcb-94a7-90f9f2864f81",
+          "name": "Séptimo Cuatrimestre",
+          "subjects": [
+            {
+              "id": "d0f7d8a4-cf1f-4489-a93b-cd62209626b9",
+              "name": "Derecho internacional público."
+            },
+            {
+              "id": "231f4ee6-5173-4ec3-86a1-5b2d083adedc",
+              "name": "Filosofía y ética."
+            },
+            {
+              "id": "5d281f63-1f8e-497a-9764-26e23f58162b",
+              "name": "Derecho fiscal."
+            },
+            {
+              "id": "09733998-bcb3-400e-a4f1-f24023f3b5fc",
+              "name": "Derecho colectivo del trabajo."
+            },
+            {
+              "id": "cc678cbf-10cd-4b67-9ef2-5b5829d4916d",
+              "name": "Propiedad intelectual."
+            },
+            {
+              "id": "612307c6-d651-4a4c-b3fd-14266e067572",
+              "name": "Inglés I."
+            }
+          ]
+        },
+        {
+          "id": "e0ec4a2e-d6a5-45fa-bcf3-78767b3cc65a",
+          "name": "Octavo Cuatrimestre",
+          "subjects": [
+            {
+              "id": "3998a199-ed37-42cf-8993-b1427448b606",
+              "name": "Seguridad social."
+            },
+            {
+              "id": "6f4d0529-54eb-4093-95ab-f6d9729f2cf7",
+              "name": "Juicio de amparo."
+            },
+            {
+              "id": "3eaf0b70-78a7-46d4-aa0d-4ae746146724",
+              "name": "Derecho procesal fiscal."
+            },
+            {
+              "id": "44a5e5b2-4470-4faf-91e0-28496d593f0e",
+              "name": "Derecho procesal del trabajo."
+            },
+            {
+              "id": "f2e1cc4f-f057-4a0d-b2bf-5724178e0c3a",
+              "name": "Derecho de comercio exterior."
+            },
+            {
+              "id": "c83734ee-2c33-4e5d-b0c6-2b50b0f01d41",
+              "name": "Inglés II"
+            }
+          ]
+        },
+        {
+          "id": "9f20f0e3-8fdb-4ff9-9a35-81fe5c1b564b",
+          "name": "Noveno Cuatrimestre",
+          "subjects": [
+            {
+              "id": "5a3a4870-9d1e-4f9d-800a-8aab561efae3",
+              "name": "Práctica forense de Derecho penal."
+            },
+            {
+              "id": "298bfdb1-f854-480e-bcf0-571fe0e62b76",
+              "name": "Práctica forense de juicio de amparo."
+            },
+            {
+              "id": "3636e1b9-dd88-4e92-bc7d-487f58962a2e",
+              "name": "Derecho agrario."
+            },
+            {
+              "id": "d81e164d-aaa9-4742-b584-d98043791e1f",
+              "name": "Derecho aduanero."
+            },
+            {
+              "id": "ba776a7e-2823-4c09-91fd-2cf3fca5cb75",
+              "name": "Elementos para la redacción de textos jurídicos."
+            },
+            {
+              "id": "395c1f2a-1b6d-4395-881c-f62729753356",
+              "name": "Inglés III."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "712f3964-8dad-4fc7-ae59-10e10aaddfd1",
+      "name": "Licenciatura en Vista Aduanal y Comercio Exterior",
+      "payperhour": "$135.00",
+      "grades": []
+    },
+    {
+      "id": "a2f878b7-6414-4e98-a7a3-aa513ebf6e55",
+      "name": "Maestría en Derecho Aduanero y Derecho de Comercio Exterior",
+      "payperhour": "$375.00",
+      "grades": [
+        {
+          "id": "9a93cf75-eb5d-4705-98c5-1e242bbbf897",
+          "name": "Primer Cuatrimestre",
+          "subjects": [
+            {
+              "id": "0f75acfd-e0ee-43a4-9cba-0344e648dbf0",
+              "name": "Derecho aduanero"
+            },
+            {
+              "id": "3cc6320d-3ed7-4dc4-9ad9-666f9aff9e0a",
+              "name": "Derecho de comercio exterior"
+            },
+            {
+              "id": "2eb794f4-cd1a-4fcb-8259-2ca9f69b899e",
+              "name": "Derecho de comercio internacional"
+            }
+          ]
+        },
+        {
+          "id": "75682a3e-bea5-40f2-9c75-8d3f66084382",
+          "name": "Segundo Cuatrimestre",
+          "subjects": [
+            {
+              "id": "77acb4b7-01a3-4817-9bc8-1cae2f354bf1",
+              "name": "Derecho de la integración económica"
+            },
+            {
+              "id": "d9ec3136-582b-4e02-82a3-1556bdbaf79d",
+              "name": "Derecho constitucional y finanzas públicas"
+            },
+            {
+              "id": "7561f598-1d0f-4950-90b0-b7406c24e76b",
+              "name": "Documentación, tramitación y gestión del comercio Exterior y aduanas"
+            }
+          ]
+        },
+        {
+          "id": "c5c2fc1b-ebca-4ff3-a41f-510b48a95cd0",
+          "name": "Tercer Cuatrimestre",
+          "subjects": [
+            {
+              "id": "26f5c02b-ccfd-4605-9210-d1d69f0c97b3",
+              "name": "Derecho de los tratados en materia comercial"
+            },
+            {
+              "id": "cf1618ee-5fca-4f2e-b4b3-8416491ebd03",
+              "name": "Merceología y clasificación arancelaria"
+            },
+            {
+              "id": "46980daf-4cce-4a1f-8c18-37da3f79af67",
+              "name": "Procedimientos administrativos en materia aduanera"
+            }
+          ]
+        },
+        {
+          "id": "8885cdcd-7e07-454b-b481-5a9db23b68ac",
+          "name": "Cuarto Cuatrimestre",
+          "subjects": [
+            {
+              "id": "5d688465-fd45-411c-a0a1-64df2f206899",
+              "name": "Compraventa y arbitraje comercial internacional"
+            },
+            {
+              "id": "4f2b937b-4b8e-47e0-b716-a8d65eff21fa",
+              "name": "Logística comercial y mercadotecnia internacional"
+            },
+            {
+              "id": "341ce5ad-72e5-4706-835e-e4af123b4322",
+              "name": "Medios de defensa en materia de comercio exterior y aduanero"
+            }
+          ]
+        },
+        {
+          "id": "2e82c6de-e291-4a10-b8b5-9b73584f7b29",
+          "name": "Quinto Cuatrimestre",
+          "subjects": [
+            {
+              "id": "7e8ba575-b8fc-40bf-8f90-ee576f4da7ee",
+              "name": "Derecho aduanero internacional"
+            },
+            {
+              "id": "7333af1a-f79a-40e3-b5d2-052b62d48ebe",
+              "name": "Derecho empresarial"
+            },
+            {
+              "id": "c4ec8525-2a88-4af7-974f-ecc259283295",
+              "name": "Derecho empresarial"
+            }
+          ]
+        },
+        {
+          "id": "925b6831-90f4-4ea4-aa67-ff94688cb6b6",
+          "name": "Sexto Cuatrimestre",
+          "subjects": [
+            {
+              "id": "3ea1d88a-00b7-4db8-a834-ad86cf6d98f1",
+              "name": "Prácticas desleales de comercio internacional, Salvaguardas y solución de controversias"
+            },
+            {
+              "id": "9bdcc4c7-a9e0-48cf-9eaa-817c198b298b",
+              "name": "Instrucción magisterial"
+            },
+            {
+              "id": "e782d3bc-732d-4b1e-bfda-f9bd7a23c4d2",
+              "name": "Juicio de amparo en materia fiscal y aduanera"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0962bc1a-64f6-401e-877b-ac36e37e14f1",
+      "name": "Maestría en Derecho Fiscal y Administrativo",
+      "payperhour": "$375.00",
+      "grades": [
+        {
+          "id": "93cc159e-57e4-4d7e-a4ca-724cd8cca348",
+          "name": "Primer Cuatrimestre",
+          "subjects": [
+            {
+              "id": "42b28844-3e7d-4463-9e74-d7043bafda31",
+              "name": "Teoria general impositiva"
+            },
+            {
+              "id": "d446c743-4157-48ae-bb2b-9b00aec15c0a",
+              "name": "ISR personas físicas"
+            },
+            {
+              "id": "c0d9945b-e41e-4552-84e7-7f3eb6d6dd8e",
+              "name": "Federalismo y coordinación fiscal"
+            }
+          ]
+        },
+        {
+          "id": "727d785e-e5ca-422f-bc43-643d2c538cb6",
+          "name": "Segundo Cuatrimestre",
+          "subjects": [
+            {
+              "id": "3e587599-785b-426e-b637-04aaf75ba107",
+              "name": "Impuestos indirectos"
+            },
+            {
+              "id": "f2c3bb87-a99b-4477-a026-98c7d70db15a",
+              "name": "ISR personas morales"
+            },
+            {
+              "id": "df3edfa6-70fe-4df7-902a-0d8d969ac610",
+              "name": "Derecho laboral y derecho de la seguridad social"
+            }
+          ]
+        },
+        {
+          "id": "5727f14f-2e12-4eca-906c-5f158dda6cea",
+          "name": "Tercer Cuatrimestre",
+          "subjects": [
+            {
+              "id": "a8be3996-7aed-41cd-9dfb-5d86c92b8fce",
+              "name": "Derecho financiero"
+            },
+            {
+              "id": "f8834462-d465-401c-8711-728d12beb0d1",
+              "name": "Derecho empresarial"
+            },
+            {
+              "id": "a5849cef-ba17-4ff8-8476-d8b1bdbef715",
+              "name": "Derecho penal fiscal"
+            }
+          ]
+        },
+        {
+          "id": "42fdd7bf-0b90-49ec-b391-708f83189a2d",
+          "name": "Cuarto Cuatrimestre",
+          "subjects": [
+            {
+              "id": "309b0f86-4959-4cee-9629-a7ae04687c40",
+              "name": "Derecho constitucional y Derechos humanos"
+            },
+            {
+              "id": "8e6f82da-058e-4feb-86b1-e2d1e88b3127",
+              "name": "Derecho de los negocios"
+            },
+            {
+              "id": "bb68317c-a248-4c94-8662-c3afa019f55a",
+              "name": "Recurso de revocación y juicio contencioso administrativo federal"
+            }
+          ]
+        },
+        {
+          "id": "328bdaa2-4a93-4d64-9a5d-4989e7094fc8",
+          "name": "Quinto Cuatrimestre",
+          "subjects": [
+            {
+              "id": "4f549b7e-7d49-4264-9fa6-05c429f14c81",
+              "name": "Derecho aduanero"
+            },
+            {
+              "id": "67adc4f1-9cfa-4f3b-9353-eaa5832e36e9",
+              "name": "Derecho de comercio internacional"
+            },
+            {
+              "id": "340fbe20-ba21-4a5e-98bc-6c17e4ce745e",
+              "name": "Juicio de amparo en materia fiscal"
+            }
+          ]
+        },
+        {
+          "id": "39c92f84-17b5-4008-9f36-67b8b9449907",
+          "name": "Sexto Cuatrimestre",
+          "subjects": [
+            {
+              "id": "7a8454a4-88c9-4aa9-a9ad-b98d995b2df4",
+              "name": "Instrucción magisterial"
+            },
+            {
+              "id": "a8d9180d-5803-45c6-b096-5a88c7fd0f33",
+              "name": "Planeación fiscal y financiero"
+            },
+            {
+              "id": "43de0327-6d8a-4569-ba4b-a96c3b0a8507",
+              "name": "Derecho fiscal internancional"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6017636c-51a0-49d9-870b-0794f5edfffd",
+      "name": "Maestría en Derecho Civil y Familiar",
+      "payperhour": "$375.00",
+      "grades": [
+        {
+          "id": "99431c89-e0c3-49ef-9b4b-146e193f301b",
+          "name": "Primer Cuatrimestre",
+          "subjects": [
+            {
+              "id": "4e207675-4004-4624-b21a-7a45c6ad3de1",
+              "name": "Personas"
+            },
+            {
+              "id": "4b855b0e-5640-4cc3-b863-f28bec0cb760",
+              "name": "Instituciones del Derecho familiar."
+            },
+            {
+              "id": "a191c707-de1e-45f5-912a-9211cd621046",
+              "name": "Historia del Derecho familiar."
+            }
+          ]
+        },
+        {
+          "id": "b1a4a8b1-6357-401b-9920-357d86c69e36",
+          "name": "Segundo Cuatrimestre",
+          "subjects": [
+            {
+              "id": "5797a6bb-3ddc-4798-b659-0655538c38ba",
+              "name": "Los derechos del menor, la interferencia y la alineación parental."
+            },
+            {
+              "id": "95e9bf29-0509-482a-b7ce-4a053873b849",
+              "name": "Teoría de la justicia y los derechos humanos."
+            },
+            {
+              "id": "2454ea09-897d-4a58-a268-aba02ab3579c",
+              "name": "El derecho real y los bienes."
+            }
+          ]
+        },
+        {
+          "id": "1b807c61-d6db-40df-af1f-63b128136692",
+          "name": "Tercer Cuatrimestre",
+          "subjects": [
+            {
+              "id": "79e88727-3ee6-4177-83b4-824547305ee7",
+              "name": "Derecho procesal civil."
+            },
+            {
+              "id": "16d54aac-62f0-4f0b-8653-acac0cfc8b0a",
+              "name": "Derecho procesal familiar."
+            },
+            {
+              "id": "b94307ed-5b53-4898-8ec1-4164624cc539",
+              "name": "Derecho penal familiar."
+            }
+          ]
+        },
+        {
+          "id": "8f384b1e-fce1-4bca-87c4-76390d4a33da",
+          "name": "Cuarto Cuatrimestre",
+          "subjects": [
+            {
+              "id": "1eeaed98-45aa-42e3-b196-c33dc6d62c6c",
+              "name": "El juicio de amparo civil y familiar."
+            },
+            {
+              "id": "a9d0f785-8c52-472a-96a6-ea0aa94fe401",
+              "name": "Derecho sucesorio y la familia."
+            },
+            {
+              "id": "9d54538f-af5a-4f88-8de5-0245195b8e1e",
+              "name": "Jurisprudencia en materia civil y familiar."
+            }
+          ]
+        },
+        {
+          "id": "684aded8-5732-486b-ad70-9b02e158f493",
+          "name": "Quinto Cuatrimestre",
+          "subjects": [
+            {
+              "id": "2bf1dc83-72b0-4139-8e8b-60110f7e0608",
+              "name": "Teoría de las obligaciones."
+            },
+            {
+              "id": "d3df1371-abf2-4321-a4be-7126c414f1e2",
+              "name": "Juicio Oral civil y familiar."
+            },
+            {
+              "id": "bee124cf-e67d-4629-8d80-a8aa7887e354",
+              "name": "El Registro civil y la identidad de las personas."
+            }
+          ]
+        },
+        {
+          "id": "39692e96-9f64-4574-8556-95e8b2e49e14",
+          "name": "Sexto Cuatrimestre",
+          "subjects": [
+            {
+              "id": "ffc9e3de-a4e0-4b09-81f5-4957e94b5faa",
+              "name": "Instrucción magisterial."
+            },
+            {
+              "id": "b0529f01-f3c0-4eba-b220-d40cb3cb4d83",
+              "name": "Medios alternos de solución de controversias."
+            },
+            {
+              "id": "f775d5d5-0975-4b60-b4cf-4a99988d0fe5",
+              "name": "Contratos civiles."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "195e9c5f-c81c-4cb6-adab-5206e1194b2f",
+      "name": "Maestría en Derecho Marítimo y Derecho Portuario",
+      "payperhour": "$375.00",
+      "grades": [
+        {
+          "id": "66001fd8-7379-4e78-96b2-0e1a72e44c13",
+          "name": "Primer Cuatrimestre",
+          "subjects": [
+            {
+              "id": "ed414b59-073c-4faa-8c57-d47aa334685e",
+              "name": "Derecho internacional"
+            },
+            {
+              "id": "4cbfd9be-a753-459f-b484-ba2defc0af76",
+              "name": "Derecho del mar"
+            },
+            {
+              "id": "b0a17cde-b0a1-403c-b45a-0e37535404bb",
+              "name": "Derechos humanos"
+            }
+          ]
+        },
+        {
+          "id": "c87ab656-7804-4e57-91d2-5dc84d3f5f6a",
+          "name": "Segundo Cuatrimestre",
+          "subjects": [
+            {
+              "id": "b1d9203d-47d7-479c-aef4-43cb3b9e0bf3",
+              "name": "Derecho ambiental"
+            },
+            {
+              "id": "c1b0ed33-e1e2-466e-a2e6-26269938ebdf",
+              "name": "Derecho marítimo"
+            },
+            {
+              "id": "faf65d9c-5167-4b83-83fd-d95b7d2c7c4d",
+              "name": "Derecho turístico"
+            }
+          ]
+        },
+        {
+          "id": "8df11736-99b3-4649-bf0a-0ef50f10e3f0",
+          "name": "Tercer Cuatrimestre",
+          "subjects": [
+            {
+              "id": "57ac6d1a-97f6-4104-96b1-c7c094454007",
+              "name": "Derecho portuario"
+            },
+            {
+              "id": "70fa8528-d84c-48ad-8cf3-a5392d866bb7",
+              "name": "Logística y cadena de suministro"
+            },
+            {
+              "id": "4552aa7b-6cbe-4b74-95d1-0b65468d8400",
+              "name": "Derecho hídrico"
+            }
+          ]
+        },
+        {
+          "id": "9ceb05f6-df3a-441d-9b38-0409c00f5073",
+          "name": "Cuarto Cuatrimestre",
+          "subjects": [
+            {
+              "id": "5b625836-caad-4bf8-8472-d4c4a6d2ec25",
+              "name": "Derecho aduanero y derecho de comercio exterior"
+            },
+            {
+              "id": "b07e3fe4-c6b3-4a7e-9523-aa76929a78e8",
+              "name": "Derecho pesquero"
+            },
+            {
+              "id": "7f36dfa0-566a-4370-8f4f-4da6bc609aa7",
+              "name": "Seguro marítimo"
+            }
+          ]
+        },
+        {
+          "id": "22d2f1c2-7a96-4253-95dd-291a2db5e5f8",
+          "name": "Quinto Cuatrimestre",
+          "subjects": [
+            {
+              "id": "7373167c-d3a2-4523-941c-979e9daae986",
+              "name": "Common Law"
+            },
+            {
+              "id": "da5f3a70-2ef1-4fe0-a458-e37f57308a35",
+              "name": "Retoríca y oratoria"
+            },
+            {
+              "id": "2b26b4a7-db21-457f-b412-4c4034b202c3",
+              "name": "Derecho marítimo penal"
+            }
+          ]
+        },
+        {
+          "id": "51e26acf-a5b6-4c8d-b025-c0364c7a9166",
+          "name": "Sexto Cuatrimestre",
+          "subjects": [
+            {
+              "id": "0f6d4099-cd0a-477c-a34e-f71a4ba7f9c5",
+              "name": "Instrucción magistral"
+            },
+            {
+              "id": "e6a3b561-aff7-4a9d-9857-11c391a8d508",
+              "name": "Derecho marítimo procesal y arbitraje"
+            },
+            {
+              "id": "1c71376c-d8bc-4847-8942-2423cd97a2e4",
+              "name": "Derecho marítimo laboral"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "410601a7-486c-4a1d-8aa9-4fa1d20f003a",
+      "name": "Maestría en Sistema Acusatorio y Juicios Penales Orales",
+      "payperhour": "$375.00",
+      "grades": [
+        {
+          "id": "36ac0b36-c3ee-4f29-8c57-e9ac4285bd63",
+          "name": "Primer Cuatrimestre",
+          "subjects": [
+            {
+              "id": "ebcbe5f3-f809-4f8a-9a1b-574207f2aa14",
+              "name": "Principios generales del sistema acusatorio."
+            },
+            {
+              "id": "8c6a0efc-5697-4b4e-8685-4c4e9b67947c",
+              "name": "Derechos humanos en el sistema acusatorio."
+            },
+            {
+              "id": "7f415197-237d-40dd-a91b-13b76edcc4ab",
+              "name": "Interpretación y argumentación jurídica dentro del sistema acusatorio."
+            }
+          ]
+        },
+        {
+          "id": "4a42ac44-70fd-4740-9478-28dff400bc46",
+          "name": "Segundo Cuatrimestre",
+          "subjects": [
+            {
+              "id": "64b07052-997a-46e3-87a3-6f798c92da9d",
+              "name": "Sujetos procesales en el sistema acusatorio."
+            },
+            {
+              "id": "1f3d98d0-b7c0-4eb5-a3d7-ff71d2ccc4c1",
+              "name": "teoría y práctica de la prueba en el Sistema acusatorio."
+            },
+            {
+              "id": "4332840f-a021-470a-9c78-18863904b714",
+              "name": "Teoría del delito y su aplicación en el sistema acusatorio."
+            }
+          ]
+        },
+        {
+          "id": "72f72a85-dab7-4e79-86ba-76422fba6a17",
+          "name": "Tercer Cuatrimestre",
+          "subjects": [
+            {
+              "id": "bdf878c0-10f8-4386-bf22-7dbbada80708",
+              "name": "La policía de investigación, escena del crimen y cadena de custodia dentro del sistema acusatorio."
+            },
+            {
+              "id": "136cb375-bcfe-4725-af0d-203f1bd5eb37",
+              "name": "Medidas cautelares en el sistema acusatorio."
+            },
+            {
+              "id": "2a8e0104-f9c9-4cf1-8c79-a5857d6b4af8",
+              "name": "Etapa de investigación."
+            }
+          ]
+        },
+        {
+          "id": "88582fcd-5e7e-4409-a1f4-87de5db18e08",
+          "name": "Cuarto Cuatrimestre",
+          "subjects": [
+            {
+              "id": "75e90dc7-fc08-4bdb-9bde-dd65812bbb2c",
+              "name": "Etapa intermedia."
+            },
+            {
+              "id": "1a8129e5-97f7-41a8-bb2b-2eb4ac14535a",
+              "name": "Teoría del caso y etapa de juicio oral."
+            },
+            {
+              "id": "f8ef6acd-4389-40c6-8520-00b05f5706b5",
+              "name": "Medios de impugnación en el sistema acusatorio."
+            }
+          ]
+        },
+        {
+          "id": "676af80d-3411-484f-bc6f-240849abc26e",
+          "name": "Quinto Cuatrimestre",
+          "subjects": [
+            {
+              "id": "58379c0b-e32c-4cbc-ab98-a274f17dbd5e",
+              "name": "Ejecución de sentencia."
+            },
+            {
+              "id": "4f471910-59c7-4401-902b-d719fc727f2a",
+              "name": "El Amparo en el proceso penal acusatorio."
+            },
+            {
+              "id": "2a8683a2-c0de-461c-a011-75ea71c0126f",
+              "name": "Justicia para adolescentes e inimputables."
+            }
+          ]
+        },
+        {
+          "id": "46b7abb5-0c31-4896-b7ca-36349527e66d",
+          "name": "Sexto Cuatrimestre",
+          "subjects": [
+            {
+              "id": "8d767621-f6f9-42fe-88b2-4e07b3d0c468",
+              "name": "Instrucción magisterial."
+            },
+            {
+              "id": "3b28c408-a6b9-422c-a5b1-5e4df3cd5a00",
+              "name": "Taller de audiencia ante el juez de control."
+            },
+            {
+              "id": "cf3fcfbb-831b-4554-8a99-d36f5840dd2d",
+              "name": "Clínica de habilidades y destrezas de litigación en el juicio de oral."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

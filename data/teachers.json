@@ -1,0 +1,104 @@
+{
+  "teachers": [
+    {
+      "id": "35dc96ad-588a-447f-a556-3e6800bb11c5",
+      "name": " Mtro. Guillermo Solis Sanchez "
+    },
+    {
+      "id": "0896b398-e8a9-4c69-8b77-d3d4929d45f1",
+      "name": "Lic. Lorna Pelayo López"
+    },
+    {
+      "id": "7ef0a598-0c7b-4e4c-8f83-4f1b7d9a9caf",
+      "name": "Lic. Ángela Merales Moreno"
+    },
+    {
+      "id": "77af779c-2d17-47a9-9983-8fb6511a3ad3",
+      "name": "Mtro. Felipe Fernández Fourzan"
+    },
+    {
+      "id": "e95dceda-da0e-48d7-b174-170585123032",
+      "name": "Mtro. Jesus Eduardo Zamudio Orozco"
+    },
+    {
+      "id": "6080a108-ef55-4a45-9da0-4f03d8df86e0",
+      "name": "Mtro. David Román Jiménez López"
+    },
+    {
+      "id": "312d8a4a-eaed-492e-8fb0-170543553b15",
+      "name": "Mtro. Alberto Schettino"
+    },
+    {
+      "id": "7d9c8964-f6a5-4ae0-8099-7522146463e1",
+      "name": "Mtro. Augusto Cubillo Martínez"
+    },
+    {
+      "id": "527fe73f-2365-4de5-9d08-44d8959445e9",
+      "name": "Mtra. Alejandra Priscila Pérez Martínez"
+    },
+    {
+      "id": "27517105-46de-4e9a-bdc4-4e3204fa361d",
+      "name": "Dra. Jacqueline Fonseca"
+    },
+    {
+      "id": "1598f0d9-d795-4422-a1e1-e5e7e554bf6b",
+      "name": "Mtra. María del Rosario Corro Elvira"
+    },
+    {
+      "id": "57905a79-5e13-4e44-8d74-f77d76d4e13c",
+      "name": "Mtro Luis Enrique Pantiga"
+    },
+    {
+      "id": "fc6e4584-8820-4cc6-ba24-7b5430c2e7bc",
+      "name": "Lic Marco Antonio Maza Cano"
+    },
+    {
+      "id": "14f74c6d-2334-4375-8f03-c60f9c915a96",
+      "name": "Mtro. David Salinas Rodríguez"
+    },
+    {
+      "id": "e2dce71d-3e90-4b56-b4e7-59add250a692",
+      "name": "Dra. Claudia Araceli Dávila Camacho"
+    },
+    {
+      "id": "929c4a73-0a1a-4133-bfbe-b0c6afa6ad6d",
+      "name": "Mtro. Guillermo Rodolfo Solis Sansores"
+    },
+    {
+      "id": "792c0aab-3091-4529-ba0a-98be05aa6e93",
+      "name": "Mtro. Max Sedano"
+    },
+    {
+      "id": "de21ad1a-727b-4275-a6bd-f25caed761ba",
+      "name": "Mtro. Ali Muruet Ibañez"
+    },
+    {
+      "id": "9b31c276-c525-46fc-bb1c-be2e190ab2b0",
+      "name": "PENDIENTE DE CONFIRMAR"
+    },
+    {
+      "id": "a0900579-d6ee-4da1-8931-bb4da4ec1443",
+      "name": "Mtra. Consuelo Becerra"
+    },
+    {
+      "id": "a13cb404-227d-46a6-ad3d-8e6c36fc9ed8",
+      "name": "Dra. Diana Hernández"
+    },
+    {
+      "id": "0b64e850-ffa0-4ffe-b14d-da58c50c09ce",
+      "name": "Mtra Regina Hernandez Zetina"
+    },
+    {
+      "id": "1353e342-3ad7-4e95-998f-ce12b3fdd19d",
+      "name": "Mtro. Roberto Hiram López Mendoza "
+    },
+    {
+      "id": "4524d866-dc82-426f-a6ce-caec24e5582a",
+      "name": "Mtro. Israel Osvaldo Arias"
+    },
+    {
+      "id": "6ddad005-30fc-482e-8cde-cf71c89eedb8",
+      "name": "Dr. Daniel Cabrera Hernández"
+    }
+  ]
+}

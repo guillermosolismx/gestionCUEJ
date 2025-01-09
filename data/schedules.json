@@ -1,0 +1,752 @@
+{
+  "schedules": [
+    {
+      "id": "d7673ff7-0248-4514-8b72-1be0dbeb36bd",
+      "careerId": "abc9e3b3-56fb-4f1a-ade6-476c1ca32e2b",
+      "gradeId": "189218b8-cfbe-44ca-83f0-8e387547fbfc",
+      "cycleId": "2025-2",
+      "careerName": "Licenciatura en Derecho",
+      "gradeName": "Primer Cuatrimestre",
+      "cycleName": "2025-2",
+      "selectedDays": [
+        "6"
+      ],
+      "nonWorkingDays": [
+        "2025-04-19"
+      ],
+      "modules": [
+        {
+          "id": "1fc4a5fd-0593-4139-b158-fcf1bef6c112",
+          "startDate": "2025-01-18",
+          "endDate": "2025-03-01",
+          "subjects": [
+            {
+              "id": "a810d3c3-4a42-4f01-bfc1-fae1375b882b",
+              "name": "Introducción al estudio del Derecho",
+              "startTime": "08:00",
+              "endTime": "10:00",
+              "teacherId": "35dc96ad-588a-447f-a556-3e6800bb11c5",
+              "hoursCount": 2
+            },
+            {
+              "id": "08027115-45fb-4818-a2aa-2d36386fbe65",
+              "name": "Teoría General del Estado.",
+              "startTime": "10:00",
+              "endTime": "12:00",
+              "teacherId": "0896b398-e8a9-4c69-8b77-d3d4929d45f1",
+              "hoursCount": 2
+            },
+            {
+              "id": "d71c575d-0800-4275-9eae-aa0174af04d2",
+              "name": "Derecho Romano.",
+              "startTime": "12:00",
+              "endTime": "14:00",
+              "teacherId": "7ef0a598-0c7b-4e4c-8f83-4f1b7d9a9caf",
+              "hoursCount": 2
+            }
+          ],
+          "timeSlots": [],
+          "dayCount": 7
+        },
+        {
+          "id": "99721c20-0887-4b91-a991-d7ea15aa2063",
+          "startDate": "2025-03-08",
+          "endDate": "2025-04-26",
+          "subjects": [
+            {
+              "id": "e1418eba-4c7e-409e-ab4c-399a27f05a7d",
+              "name": "Derechos Humanos.",
+              "startTime": "08:00",
+              "endTime": "10:00",
+              "teacherId": "77af779c-2d17-47a9-9983-8fb6511a3ad3",
+              "hoursCount": 2
+            },
+            {
+              "id": "cdd75698-34b4-48d5-b6c2-97223d80c185",
+              "name": "Retórica y Oratoria.",
+              "startTime": "10:00",
+              "endTime": "12:00",
+              "teacherId": "e95dceda-da0e-48d7-b174-170585123032",
+              "hoursCount": 2
+            },
+            {
+              "id": "2e9d57f4-433d-43d1-9541-545f603c893f",
+              "name": "Derecho Civil: Parte general y Personas.",
+              "startTime": "12:00",
+              "endTime": "14:00",
+              "teacherId": "6080a108-ef55-4a45-9da0-4f03d8df86e0",
+              "hoursCount": 2
+            }
+          ],
+          "timeSlots": [],
+          "dayCount": 8
+        }
+      ],
+      "createdAt": "2025-01-04T06:25:01.532Z"
+    },
+    {
+      "id": "8ff9dd94-32cf-40d9-a7ab-8e71905e9b7b",
+      "careerId": "abc9e3b3-56fb-4f1a-ade6-476c1ca32e2b",
+      "gradeId": "bc8ba7ba-41cd-42c4-8e92-ae07f1751aa2",
+      "cycleId": "2025-2",
+      "careerName": "Licenciatura en Derecho",
+      "gradeName": "Segundo Cuatrimestre",
+      "cycleName": "2025-2",
+      "selectedDays": [
+        "6"
+      ],
+      "nonWorkingDays": [
+        "2025-04-19"
+      ],
+      "modules": [
+        {
+          "id": "ee62ea41-1e69-44c1-8818-76b7d077baa2",
+          "startDate": "2025-01-18",
+          "endDate": "2025-03-01",
+          "subjects": [
+            {
+              "id": "37e1baec-4c18-4566-8fca-2d1cf1913ce4",
+              "name": "Historia del derecho en México.",
+              "startTime": "08:00",
+              "endTime": "10:00",
+              "teacherId": "312d8a4a-eaed-492e-8fb0-170543553b15",
+              "hoursCount": 2
+            },
+            {
+              "id": "0a314136-0b8d-4d32-80cf-26ff86821d04",
+              "name": "Técnicas de investigación jurídica.",
+              "startTime": "10:00",
+              "endTime": "12:00",
+              "teacherId": "7d9c8964-f6a5-4ae0-8099-7522146463e1",
+              "hoursCount": 2
+            },
+            {
+              "id": "2b83cafe-29d9-4cc5-9ec1-60201a7805cc",
+              "name": "Teoría general del proceso.",
+              "startTime": "12:00",
+              "endTime": "14:00",
+              "teacherId": "0896b398-e8a9-4c69-8b77-d3d4929d45f1",
+              "hoursCount": 2
+            }
+          ],
+          "timeSlots": [],
+          "dayCount": 7
+        },
+        {
+          "id": "c5ecccca-c388-451e-9edc-18726227b0c9",
+          "startDate": "2025-03-08",
+          "endDate": "2025-04-26",
+          "subjects": [
+            {
+              "id": "81f11444-34a4-4b4b-8ba8-82220a587fff",
+              "name": "Argumentación e interpretación jurídica.",
+              "startTime": "08:00",
+              "endTime": "10:00",
+              "teacherId": "527fe73f-2365-4de5-9d08-44d8959445e9",
+              "hoursCount": 2
+            },
+            {
+              "id": "5fb5263e-255e-4429-99b7-cfff7dbb6ce8",
+              "name": "Derecho civil: familia.",
+              "startTime": "10:00",
+              "endTime": "12:00",
+              "teacherId": "27517105-46de-4e9a-bdc4-4e3204fa361d",
+              "hoursCount": 2
+            },
+            {
+              "id": "b15104ec-e34c-4f0f-8dcd-47b2d52c3b80",
+              "name": "Ciencia política.",
+              "startTime": "12:00",
+              "endTime": "14:00",
+              "teacherId": "35dc96ad-588a-447f-a556-3e6800bb11c5",
+              "hoursCount": 2
+            }
+          ],
+          "timeSlots": [],
+          "dayCount": 8
+        }
+      ],
+      "createdAt": "2025-01-04T16:32:24.553Z"
+    },
+    {
+      "id": "f0353547-bd5b-439b-8a31-7ab711d982c6",
+      "careerId": "abc9e3b3-56fb-4f1a-ade6-476c1ca32e2b",
+      "gradeId": "17bb32b7-5961-45da-a95d-7c65f3d00dea",
+      "cycleId": "2025-2",
+      "careerName": "Licenciatura en Derecho",
+      "gradeName": "Quinto Cuatrimestre",
+      "cycleName": "2025-2",
+      "selectedDays": [
+        "6",
+        "6"
+      ],
+      "nonWorkingDays": [
+        "2025-04-19",
+        "2025-04-19"
+      ],
+      "modules": [
+        {
+          "id": "ba630e67-0108-46d1-8581-a331c9f2cd0d",
+          "startDate": "2025-01-18",
+          "endDate": "2025-03-01",
+          "subjects": [
+            {
+              "id": "6259a25c-18ea-4cd0-973e-b9cb2779f082",
+              "name": "Derecho civil: contratos.",
+              "startTime": "08:00",
+              "endTime": "10:00",
+              "teacherId": "7ef0a598-0c7b-4e4c-8f83-4f1b7d9a9caf",
+              "hoursCount": 2
+            },
+            {
+              "id": "00785409-de1d-4694-bf12-6b491c668088",
+              "name": "Derecho internacional privado.",
+              "startTime": "10:00",
+              "endTime": "12:00",
+              "teacherId": "35dc96ad-588a-447f-a556-3e6800bb11c5",
+              "hoursCount": 2
+            },
+            {
+              "id": "6c24128d-3043-4c2d-9473-3028690dac21",
+              "name": "Contratos mercantiles.",
+              "startTime": "12:00",
+              "endTime": "14:00",
+              "teacherId": "fc6e4584-8820-4cc6-ba24-7b5430c2e7bc",
+              "hoursCount": 2
+            }
+          ],
+          "timeSlots": [],
+          "dayCount": 7
+        },
+        {
+          "id": "22dd298a-7dc0-405d-be57-46b0b6d9b65b",
+          "startDate": "2025-03-08",
+          "endDate": "2025-04-26",
+          "subjects": [
+            {
+              "id": "0e879194-d7f4-4f56-ad42-d4415db1d38a",
+              "name": "Sistema penal acusatorio.",
+              "startTime": "08:00",
+              "endTime": "10:00",
+              "teacherId": "312d8a4a-eaed-492e-8fb0-170543553b15",
+              "hoursCount": 2
+            },
+            {
+              "id": "da01e17a-0f8c-470b-934f-a10f7eba560f",
+              "name": "Derecho electoral.",
+              "startTime": "10:00",
+              "endTime": "12:00",
+              "teacherId": "35dc96ad-588a-447f-a556-3e6800bb11c5",
+              "hoursCount": 2
+            },
+            {
+              "id": "5038a791-0f64-4cd9-9f1b-483a11777cd3",
+              "name": "Administración de justicia y jurisprudencia.",
+              "startTime": "12:00",
+              "endTime": "14:00",
+              "teacherId": "1598f0d9-d795-4422-a1e1-e5e7e554bf6b",
+              "hoursCount": 2
+            }
+          ],
+          "timeSlots": [],
+          "dayCount": 8
+        }
+      ],
+      "createdAt": "2025-01-07T00:36:11.015Z"
+    },
+    {
+      "id": "077c0e4d-7e2f-4986-a40d-bfc6c4e16a1f",
+      "careerId": "abc9e3b3-56fb-4f1a-ade6-476c1ca32e2b",
+      "gradeId": "1f7fd118-a1c6-4c15-971e-a26b0caa2af8",
+      "cycleId": "2025-2",
+      "careerName": "Licenciatura en Derecho",
+      "gradeName": "Cuarto Cuatrimestre",
+      "cycleName": "2025-2",
+      "selectedDays": [
+        "6"
+      ],
+      "nonWorkingDays": [],
+      "modules": [
+        {
+          "id": "25ba3ee7-0564-4c76-a970-11d644625702",
+          "startDate": "2025-01-18",
+          "endDate": "2025-03-01",
+          "subjects": [
+            {
+              "id": "3289a6ca-b04a-44e7-b779-fe1a7b638966",
+              "name": "Estudio de los delitos.",
+              "startTime": "08:00",
+              "endTime": "10:00",
+              "teacherId": "1598f0d9-d795-4422-a1e1-e5e7e554bf6b",
+              "hoursCount": 2
+            },
+            {
+              "id": "71444948-637c-4626-9c0a-4514131debe8",
+              "name": "Títulos y operaciones de crédito.",
+              "startTime": "10:00",
+              "endTime": "12:00",
+              "teacherId": "fc6e4584-8820-4cc6-ba24-7b5430c2e7bc",
+              "hoursCount": 2
+            },
+            {
+              "id": "559a4f4e-08f3-43d1-b40c-ffa53815f913",
+              "name": "Medios alternos de solución de controversias.",
+              "startTime": "12:00",
+              "endTime": "14:00",
+              "teacherId": "e95dceda-da0e-48d7-b174-170585123032",
+              "hoursCount": 2
+            }
+          ],
+          "timeSlots": []
+        },
+        {
+          "id": "faf7ba1c-3d2d-4be0-8a28-39c0fd410bcc",
+          "startDate": "2025-03-08",
+          "endDate": "2025-04-26",
+          "subjects": [
+            {
+              "id": "9637178a-2f84-4427-937b-4c320d6c78c3",
+              "name": "Sociología jurídica.",
+              "startTime": "08:00",
+              "endTime": "10:00",
+              "teacherId": "35dc96ad-588a-447f-a556-3e6800bb11c5",
+              "hoursCount": 2
+            },
+            {
+              "id": "e7844e49-c846-4941-826a-40f9edb7fcde",
+              "name": "Actos administrativos.",
+              "startTime": "10:00",
+              "endTime": "12:00",
+              "teacherId": "527fe73f-2365-4de5-9d08-44d8959445e9",
+              "hoursCount": 2
+            },
+            {
+              "id": "53dc4259-be2c-478b-a0f6-eeeea5e14bb2",
+              "name": "Derecho civil: obligaciones.",
+              "startTime": "12:00",
+              "endTime": "14:00",
+              "teacherId": "27517105-46de-4e9a-bdc4-4e3204fa361d",
+              "hoursCount": 2
+            }
+          ],
+          "timeSlots": []
+        }
+      ],
+      "createdAt": "2025-01-07T00:46:23.118Z"
+    },
+    {
+      "id": "1c2010e3-03d6-4b5f-b057-3efd4e02742c",
+      "careerId": "195e9c5f-c81c-4cb6-adab-5206e1194b2f",
+      "gradeId": "22d2f1c2-7a96-4253-95dd-291a2db5e5f8",
+      "cycleId": "2025-2",
+      "careerName": "Maestría en Derecho Marítimo y Derecho Portuario",
+      "gradeName": "Quinto Cuatrimestre",
+      "cycleName": "2025-2",
+      "selectedDays": [
+        "5"
+      ],
+      "nonWorkingDays": [
+        "2025-04-18"
+      ],
+      "modules": [
+        {
+          "id": "22bd5dcb-bb50-495f-8bd3-ea7c278a63af",
+          "startDate": "2025-01-17",
+          "endDate": "2025-02-14",
+          "subjects": [
+            {
+              "id": "2b26b4a7-db21-457f-b412-4c4034b202c3",
+              "name": "Derecho marítimo penal",
+              "startTime": "18:00",
+              "endTime": "21:00",
+              "teacherId": "792c0aab-3091-4529-ba0a-98be05aa6e93",
+              "hoursCount": 3
+            }
+          ],
+          "timeSlots": [],
+          "dayCount": 5
+        },
+        {
+          "id": "0677eccd-3449-4260-b5dc-7ce0a8ca403d",
+          "startDate": "2025-02-21",
+          "endDate": "2025-03-21",
+          "subjects": [
+            {
+              "id": "7373167c-d3a2-4523-941c-979e9daae986",
+              "name": "Common Law",
+              "startTime": "18:00",
+              "endTime": "21:00",
+              "teacherId": "14f74c6d-2334-4375-8f03-c60f9c915a96",
+              "hoursCount": 3
+            }
+          ],
+          "timeSlots": [],
+          "dayCount": 5
+        },
+        {
+          "id": "ed522fe7-f235-41e0-8fda-d5fceef83bd1",
+          "startDate": "2025-03-28",
+          "endDate": "2025-04-25",
+          "subjects": [
+            {
+              "id": "da5f3a70-2ef1-4fe0-a458-e37f57308a35",
+              "name": "Retoríca y oratoria",
+              "startTime": "18:00",
+              "endTime": "21:00",
+              "teacherId": "312d8a4a-eaed-492e-8fb0-170543553b15",
+              "hoursCount": 3
+            }
+          ],
+          "timeSlots": [],
+          "dayCount": 5
+        }
+      ],
+      "createdAt": "2025-01-08T03:06:09.602Z"
+    },
+    {
+      "id": "f810c612-f30e-434b-9a2a-9c280e698cb3",
+      "careerId": "195e9c5f-c81c-4cb6-adab-5206e1194b2f",
+      "gradeId": "c87ab656-7804-4e57-91d2-5dc84d3f5f6a",
+      "cycleId": "2025-2",
+      "careerName": "Maestría en Derecho Marítimo y Derecho Portuario",
+      "gradeName": "Segundo Cuatrimestre",
+      "cycleName": "2025-2",
+      "selectedDays": [
+        "5"
+      ],
+      "nonWorkingDays": [
+        "2025-04-18"
+      ],
+      "modules": [
+        {
+          "id": "82c7b71b-e57f-4cbc-a305-7e6ca49e8ba0",
+          "startDate": "2025-01-17",
+          "endDate": "2025-02-14",
+          "subjects": [
+            {
+              "id": "c1b0ed33-e1e2-466e-a2e6-26269938ebdf",
+              "name": "Derecho marítimo",
+              "startTime": "18:00",
+              "endTime": "21:00",
+              "teacherId": "14f74c6d-2334-4375-8f03-c60f9c915a96",
+              "hoursCount": 3
+            }
+          ],
+          "timeSlots": [],
+          "dayCount": 5
+        },
+        {
+          "id": "e0ff82cb-aa16-446e-a229-3bd3aa3410bb",
+          "startDate": "2025-02-21",
+          "endDate": "2025-03-21",
+          "subjects": [
+            {
+              "id": "faf65d9c-5167-4b83-83fd-d95b7d2c7c4d",
+              "name": "Derecho turístico",
+              "startTime": "18:00",
+              "endTime": "21:00",
+              "teacherId": "929c4a73-0a1a-4133-bfbe-b0c6afa6ad6d",
+              "hoursCount": 3
+            }
+          ],
+          "timeSlots": [],
+          "dayCount": 5
+        },
+        {
+          "id": "b45b5663-e32a-4648-8ec2-1cb74a7f9049",
+          "startDate": "2025-03-28",
+          "endDate": "2025-04-25",
+          "subjects": [
+            {
+              "id": "b1d9203d-47d7-479c-aef4-43cb3b9e0bf3",
+              "name": "Derecho ambiental",
+              "startTime": "18:00",
+              "endTime": "21:00",
+              "teacherId": "e2dce71d-3e90-4b56-b4e7-59add250a692",
+              "hoursCount": 3
+            }
+          ],
+          "timeSlots": [],
+          "dayCount": 5
+        }
+      ],
+      "createdAt": "2025-01-08T03:13:10.994Z"
+    },
+    {
+      "id": "b5863f19-e7fc-4085-ac39-6d71f996a7dd",
+      "careerId": "a2f878b7-6414-4e98-a7a3-aa513ebf6e55",
+      "gradeId": "925b6831-90f4-4ea4-aa67-ff94688cb6b6",
+      "cycleId": "2025-2",
+      "careerName": "Maestría en Derecho Aduanero y Derecho de Comercio Exterior",
+      "gradeName": "Sexto Cuatrimestre",
+      "cycleName": "2025-2",
+      "selectedDays": [
+        "6"
+      ],
+      "nonWorkingDays": [],
+      "modules": [
+        {
+          "id": "befc1cec-69e0-417e-9e5d-652e1d7ed73c",
+          "startDate": "2025-01-18",
+          "endDate": "2025-02-08",
+          "subjects": [
+            {
+              "id": "9bdcc4c7-a9e0-48cf-9eaa-817c198b298b",
+              "name": "Instrucción magisterial",
+              "startTime": "09:00",
+              "endTime": "14:00",
+              "teacherId": "de21ad1a-727b-4275-a6bd-f25caed761ba",
+              "hoursCount": 5
+            }
+          ],
+          "timeSlots": []
+        },
+        {
+          "id": "c456ca32-6c4d-4344-9b4b-22c81e557a4d",
+          "startDate": "2025-02-15",
+          "endDate": "2025-03-15",
+          "subjects": [
+            {
+              "id": "3ea1d88a-00b7-4db8-a834-ad86cf6d98f1",
+              "name": "Prácticas desleales de comercio internacional, Salvaguardas y solución de controversias",
+              "startTime": "09:00",
+              "endTime": "14:00",
+              "teacherId": "929c4a73-0a1a-4133-bfbe-b0c6afa6ad6d",
+              "hoursCount": 5
+            }
+          ],
+          "timeSlots": []
+        },
+        {
+          "id": "069ed041-bae9-41ef-88cf-39ba50930e60",
+          "startDate": "2025-03-22",
+          "endDate": "2025-04-26",
+          "subjects": [
+            {
+              "id": "e782d3bc-732d-4b1e-bfda-f9bd7a23c4d2",
+              "name": "Juicio de amparo en materia fiscal y aduanera",
+              "startTime": "09:00",
+              "endTime": "14:00",
+              "teacherId": "6ddad005-30fc-482e-8cde-cf71c89eedb8",
+              "hoursCount": 5
+            }
+          ],
+          "timeSlots": []
+        }
+      ],
+      "createdAt": "2025-01-08T03:21:29.795Z"
+    },
+    {
+      "id": "1035f29c-685d-4073-8775-fddd7981694f",
+      "careerId": "6017636c-51a0-49d9-870b-0794f5edfffd",
+      "gradeId": "99431c89-e0c3-49ef-9b4b-146e193f301b",
+      "cycleId": "2025-2",
+      "careerName": "Maestría en Derecho Civil y Familiar",
+      "gradeName": "Primer Cuatrimestre",
+      "cycleName": "2025-2",
+      "selectedDays": [
+        "6"
+      ],
+      "nonWorkingDays": [
+        "2025-04-19"
+      ],
+      "modules": [
+        {
+          "id": "f4c61988-c472-42ab-869c-8b629d6007a7",
+          "startDate": "2025-01-18",
+          "endDate": "2025-02-15",
+          "subjects": [
+            {
+              "id": "4e207675-4004-4624-b21a-7a45c6ad3de1",
+              "name": "Personas",
+              "startTime": "09:00",
+              "endTime": "14:00",
+              "teacherId": "77af779c-2d17-47a9-9983-8fb6511a3ad3",
+              "hoursCount": 5
+            }
+          ],
+          "timeSlots": [],
+          "dayCount": 5
+        },
+        {
+          "id": "0dcca7ca-ae81-402c-af59-094d4a65c96d",
+          "startDate": "2025-02-22",
+          "endDate": "2025-03-22",
+          "subjects": [
+            {
+              "id": "4b855b0e-5640-4cc3-b863-f28bec0cb760",
+              "name": "Instituciones del Derecho familiar.",
+              "startTime": "09:00",
+              "endTime": "14:00",
+              "teacherId": "a0900579-d6ee-4da1-8931-bb4da4ec1443",
+              "hoursCount": 5
+            }
+          ],
+          "timeSlots": [],
+          "dayCount": 5
+        },
+        {
+          "id": "fc0c1b51-3ca5-4779-a081-84a865ff180d",
+          "startDate": "2025-03-29",
+          "endDate": "2025-04-26",
+          "subjects": [
+            {
+              "id": "a191c707-de1e-45f5-912a-9211cd621046",
+              "name": "Historia del Derecho familiar.",
+              "startTime": "09:00",
+              "endTime": "14:00",
+              "teacherId": "7d9c8964-f6a5-4ae0-8099-7522146463e1",
+              "hoursCount": 5
+            }
+          ],
+          "timeSlots": [],
+          "dayCount": 5
+        }
+      ],
+      "createdAt": "2025-01-08T03:28:41.279Z"
+    },
+    {
+      "id": "665dac91-fa73-4757-8334-8888e951d119",
+      "careerId": "0962bc1a-64f6-401e-877b-ac36e37e14f1",
+      "gradeId": "5727f14f-2e12-4eca-906c-5f158dda6cea",
+      "cycleId": "2025-2",
+      "careerName": "Maestría en Derecho Fiscal y Administrativo",
+      "gradeName": "Tercer Cuatrimestre",
+      "cycleName": "2025-2",
+      "selectedDays": [
+        "5"
+      ],
+      "nonWorkingDays": [
+        "2025-04-18"
+      ],
+      "modules": [
+        {
+          "id": "35a53d8f-32e4-4225-ac79-2d361b9bbadf",
+          "startDate": "2025-01-17",
+          "endDate": "2025-02-14",
+          "subjects": [
+            {
+              "id": "f8834462-d465-401c-8711-728d12beb0d1",
+              "name": "Derecho empresarial",
+              "startTime": "17:00",
+              "endTime": "21:00",
+              "teacherId": "929c4a73-0a1a-4133-bfbe-b0c6afa6ad6d",
+              "hoursCount": 4
+            }
+          ],
+          "timeSlots": [],
+          "dayCount": 5
+        },
+        {
+          "id": "2ae83e78-f53c-48bc-8cfd-70cd3f35b730",
+          "startDate": "2025-02-21",
+          "endDate": "2025-03-14",
+          "subjects": [
+            {
+              "id": "a8be3996-7aed-41cd-9dfb-5d86c92b8fce",
+              "name": "Derecho financiero",
+              "startTime": "17:00",
+              "endTime": "21:00",
+              "teacherId": "a13cb404-227d-46a6-ad3d-8e6c36fc9ed8",
+              "hoursCount": 4
+            }
+          ],
+          "timeSlots": [],
+          "dayCount": 4
+        },
+        {
+          "id": "47765dc7-eac6-44a5-b2a1-65629bd7514a",
+          "startDate": "2025-03-21",
+          "endDate": "2025-04-25",
+          "subjects": [
+            {
+              "id": "a5849cef-ba17-4ff8-8476-d8b1bdbef715",
+              "name": "Derecho penal fiscal",
+              "startTime": "17:00",
+              "endTime": "21:00",
+              "teacherId": "9b31c276-c525-46fc-bb1c-be2e190ab2b0",
+              "hoursCount": 4
+            }
+          ],
+          "timeSlots": [],
+          "dayCount": 6
+        }
+      ],
+      "createdAt": "2025-01-08T03:35:34.378Z"
+    },
+    {
+      "id": "0aef6015-1a09-4e4a-bdd0-11575382654b",
+      "careerId": "410601a7-486c-4a1d-8aa9-4fa1d20f003a",
+      "gradeId": "72f72a85-dab7-4e79-86ba-76422fba6a17",
+      "cycleId": "2025-2",
+      "careerName": "Maestría en Sistema Acusatorio y Juicios Penales Orales",
+      "gradeName": "Tercer Cuatrimestre",
+      "cycleName": "2025-2",
+      "selectedDays": [
+        "6",
+        "0"
+      ],
+      "nonWorkingDays": [
+        "2025-02-01",
+        "2025-02-02",
+        "2025-02-23",
+        "2025-03-08",
+        "2025-03-09"
+      ],
+      "modules": [
+        {
+          "id": "932ae0a6-2f44-417f-a7aa-ca2c2c0914ec",
+          "startDate": "2025-01-25",
+          "endDate": "2025-02-08",
+          "subjects": [
+            {
+              "id": "bdf878c0-10f8-4386-bf22-7dbbada80708",
+              "name": "La policía de investigación, escena del crimen y cadena de custodia dentro del sistema acusatorio.",
+              "startTime": "09:00",
+              "endTime": "14:00",
+              "teacherId": "0b64e850-ffa0-4ffe-b14d-da58c50c09ce",
+              "hoursCount": 5
+            }
+          ],
+          "timeSlots": [],
+          "dayCount": 5
+        },
+        {
+          "id": "1002e1f4-8c20-4437-8db3-ef4eb4f9f8e4",
+          "startDate": "2025-02-22",
+          "endDate": "2025-03-16",
+          "subjects": [
+            {
+              "id": "2a8e0104-f9c9-4cf1-8c79-a5857d6b4af8",
+              "name": "Etapa de investigación.",
+              "startTime": "09:00",
+              "endTime": "14:00",
+              "teacherId": "1353e342-3ad7-4e95-998f-ce12b3fdd19d",
+              "hoursCount": 5
+            }
+          ],
+          "timeSlots": [],
+          "dayCount": 8
+        },
+        {
+          "id": "3739c37f-c895-49ca-865f-4b8dcd84328f",
+          "startDate": "2025-04-12",
+          "endDate": "2025-04-13",
+          "subjects": [
+            {
+              "id": "136cb375-bcfe-4725-af0d-203f1bd5eb37",
+              "name": "Medidas cautelares en el sistema acusatorio.",
+              "startTime": "09:00",
+              "endTime": "14:00",
+              "teacherId": "4524d866-dc82-426f-a6ce-caec24e5582a",
+              "hoursCount": 5
+            }
+          ],
+          "timeSlots": [],
+          "dayCount": 2
+        }
+      ],
+      "createdAt": "2025-01-08T03:55:29.794Z"
+    }
+  ]
+}

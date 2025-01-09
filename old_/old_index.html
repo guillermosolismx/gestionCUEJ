@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Horarios</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <style>
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: flex-start; /* Cambiar align-items a flex-start */
+            padding-top: 5%; /* Añadir padding-top para ajustar la posición vertical */
+        }
+        .modal-large {
+            width: 90%; /* Agrandar el modal un 10% más */
+            max-width: 1200px;
+            height: 80%; /* Ajustar la altura del modal */
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-y: auto;
+            margin: auto; /* Centrar el modal */
+            display: flex;
+            flex-direction: column;
+        }
+        .modal-buttons {
+            margin-top: auto; /* Mover los botones a la parte inferior */
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li class="nav-section">
+                        <span class="section-title">Administración</span>
+                        <ul>
+                            <li><button class="btn" onclick="showSection('calculation')">Cálculo</button></li>
+                            <li><button class="btn" onclick="showSection('payment-schedule'); showPaymentSchedule();">Programación de pagos</button></li> <!-- Nueva opción de menú -->
+                        </ul>
+                    </li>
+                    <li class="nav-section">
+                        <span class="section-title">Académico</span>
+                        <ul>
+                            <li><button class="btn" onclick="showSection('assignments'); assignmentManager.loadAssignments();">Asignar Horarios</button></li> <!-- Actualización -->
+                            <li><button class="btn" onclick="showSection('schedule'); scheduleManager.loadScheduleData();">Configurar Horarios</button></li> <!-- Nueva opción de menú -->
+                            <!-- Eliminar la opción "Configurar Horarios" -->
+                        </ul>
+                    </li>
+                    <li class="nav-section">
+                        <span class="section-title">Configuraciones</span>
+                        <ul>
+                            <li><button class="btn" onclick="showSection('teachers'); teacherManager.loadTeachers();">Gestionar Profesores</button></li> <!-- Actualización -->
+                            <li><button class="btn" onclick="showSection('careers'); careerManager.loadCareers();">Gestionar Carreras</button></li> <!-- Actualización -->
+                            <li><button class="btn" onclick="showSection('beneficiaries'); beneficiaryManager.loadBeneficiaries();">Gestionar Beneficiarios</button></li> <!-- Nueva opción de menú -->
+                            <!-- Eliminar la opción de menú Gestionar Asignaturas -->
+                            <li><button class="btn" onclick="showSection('formats')">Gestión de Formatos</button></li> <!-- Nuevo botón -->
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <section id="teachers" class="content-section">
+                <h1>Gestionar Profesores</h1>
+                <form id="teacherForm" class="form-group">
+                    <div class="form-inline">
+                        <input type="text" id="teacherName" placeholder="Nombre del Profesor">
+                        <button type="button" class="btn" onclick="teacherManager.addTeacher(document.getElementById('teacherName').value)">Agregar Profesor</button>
+                    </div>
+                </form>
+                <ul id="teacherList"></ul>
+            </section>
+            <section id="careers" class="content-section">
+                <h1>Gestionar Carreras</h1>
+                <form id="careerForm" class="form-group">
+                    <div class="form-inline">
+                        <input type="text" id="careerName" placeholder="Nombre de la Carrera">
+                        <button type="button" class="btn" onclick="careerManager.addCareer(document.getElementById('careerName').value)">
+                            Agregar Carrera
+                        </button>
+                    </div>
+                </form>
+                <div id="careerList" class="career-list scrollable">
+                    <!-- El contenido de esta sección se genera dinámicamente mediante JavaScript -->
+                </div>
+            </section>
+            <section id="schedule" class="content-section">
+                <h1>Configurar Horarios</h1>
+                <button class="btn" onclick="scheduleManager.configureNewSchedule()">CONFIGURAR NUEVO HORARIO</button> <!-- Nuevo botón -->
+                <div id="scheduleConfig">
+                    <!-- El contenido de esta sección se genera dinámicamente mediante JavaScript -->
+                    <div id="scheduleList"></div> <!-- Asegurarse de que el elemento scheduleList esté presente -->
+                </div>
+            </section>
+            <section id="assignments" class="content-section">
+                <h1>Asignar Horarios</h1>
+                <div class="section-header">
+                    <button class="btn" onclick="assignmentManager.showCreateAssignmentModal()">
+                        Crear Asignación
+                    </button>
+                </div>
+                <div id="assignmentsList" class="assignments-list"></div>
+            </section>
+            <!-- Nueva sección para la gestión de formatos -->
+            <section id="formats" class="content-section">
+                <h1>Gestión de Formatos</h1>
+                <div class="form-group">
+                    <label for="formatName">Nombre del Formato</label>
+                    <input type="text" id="formatName" placeholder="Ingrese el nombre del formato">
+                </div>
+                <div class="form-group">
+                    <label for="formatContent">Contenido del Formato</label>
+                    <textarea id="formatContent" rows="10" placeholder="Ingrese el contenido del formato"></textarea>
+                </div>
+                <button class="btn" onclick="saveFormat()">Guardar Formato</button>
+                <div id="formatsList" class="formats-list">
+                    <!-- Lista de formatos guardados -->
+                </div>
+            </section>
+            <!-- Nueva sección para el cálculo de horas impartidas -->
+            <section id="calculation" class="content-section">
+                <h1>Cálculo de Horas Impartidas</h1>
+                <div class="form-group">
+                    <label for="calculationDateRange">Rango de Fechas</label>
+                    <input type="text" id="calculationDateRange" placeholder="Seleccione el rango de fechas">
+                </div>
+                <div class="form-group">
+                    <label for="calculationTeacher">Profesor</label>
+                    <select id="calculationTeacher">
+                        <option value="">Seleccione un profesor</option>
+                        <!-- Opciones de profesores se llenarán dinámicamente -->
+                    </select>
+                </div>
+                <button class="btn" onclick="calculationManager.calculateHours()">Calcular Horas</button>
+                <div id="calculationResult" class="calculation-result">
+                    <!-- Resultados del cálculo se mostrarán aquí -->
+                </div>
+            </section>
+            <!-- Nueva sección para la programación de pagos -->
+            <section id="payment-schedule" class="content-section">
+                <h1>Programación de pagos</h1>
+                <div class="form-group">
+                    <label for="initialBalance">SALDO INICIAL</label>
+                    <input type="number" id="initialBalance" placeholder="Saldo inicial" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="totalAmount">MONTO A PAGAR</label>
+                    <input type="number" id="totalAmount" placeholder="Monto a pagar" step="0.01" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="finalBalance">SALDO FINAL</label>
+                    <input type="number" id="finalBalance" placeholder="Saldo final" step="0.01" readonly>
+                </div>
+                <table id="paymentTable" class="payment-table">
+                    <thead>
+                        <tr>
+                            <th>BENEFICIARIO</th>
+                            <th>CONCEPTO DE PAGO</th>
+                            <th>MONTO</th>
+                            <th>ACCIONES</th> <!-- Nueva columna para acciones -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Filas se añadirán dinámicamente -->
+                    </tbody>
+                </table>
+                <button class="btn" onclick="addPaymentRow()">Añadir Fila</button>
+                <button class="btn btn-save-payments" onclick="savePayments()">Solicitar autorización</button>
+            </section>
+            <section id="beneficiaries" class="content-section">
+                <h1>Gestionar Beneficiarios</h1>
+                <form id="beneficiaryForm" class="form-group">
+                    <div class="form-inline">
+                        <input type="text" id="beneficiaryName" placeholder="Nombre del Beneficiario">
+                        <button type="button" class="btn" onclick="beneficiaryManager.addBeneficiary(document.getElementById('beneficiaryName').value)">Agregar Beneficiario</button>
+                    </div>
+                </form>
+                <ul id="beneficiaryList"></ul>
+            </section>
+        </main>
+    </div>
+    <div class="modal-overlay" id="editTeacherModal">
+        <div class="modal">
+            <h2>Editar Profesor</h2>
+            <input type="text" id="editTeacherName" placeholder="Nombre del Profesor">
+            <div class="modal-buttons">
+                <button class="btn btn-delete" onclick="closeEditModal()">Cancelar</button>
+                <button class="btn" onclick="saveTeacherEdit()">Guardar</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="createScheduleModal">
+        <div class="modal modal-large">
+            <h2>Crear Horario</h2>
+            <div class="modal-content">
+                <div class="modal-left">
+                    <div class="form-group">
+                        <label>Seleccione Carrera</label>
+                        <select id="scheduleCareer" data-schedule="create">
+                            <option value="">Seleccione una carrera</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Seleccione Grado</label>
+                        <select id="scheduleGrade" data-schedule="create" disabled>
+                            <option value="">Seleccione un grado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Ciclo</label>
+                        <select id="scheduleCycle" data-schedule="create">
+                            <option value="">Seleccione un ciclo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Días de clase</label>
+                        <div class="weekdays-selector" data-schedule="create">
+                            <!-- Se llenará dinámicamente con JS -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-right">
+                    <div class="form-group">
+                        <label>Módulos</label>
+                        <div id="modulesList" data-schedule="create"></div>
+                        <button type="button" class="btn btn-add-module" data-schedule="create" onclick="scheduleManager.addModule()">
+                            Agregar Módulo
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button type="button" class="btn btn-delete" data-action="cancel">Cancelar</button>
+                <button type="button" class="btn" data-action="confirm">Crear</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="editScheduleModal">
+        <div class="modal">
+            <h2>Editar Horario</h2>
+            <div class="modal-content">
+                <div class="modal-left">
+                    <div class="form-group">
+                        <label>Seleccione Carrera</label>
+                        <select id="editScheduleCareer">
+                            <option value="">Seleccione una carrera</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Seleccione Grado</label>
+                        <select id="editScheduleGrade" disabled>
+                            <option value="">Seleccione un grado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Ciclo</label>
+                        <select id="editScheduleCycle">
+                            <option value="">Seleccione un ciclo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Días de clase</label>
+                        <div class="weekdays-selector" id="editWeekdaysSelector">
+                            <!-- Se llenará dinámicamente con JS -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-right">
+                    <div class="form-group">
+                        <label>Módulos</label>
+                        <div id="editModulesList"></div>
+                        <button class="btn" onclick="addNewModule(true)">Agregar Módulo</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn-delete" onclick="closeEditScheduleModal()">Cancelar</button>
+                <button class="btn" onclick="saveScheduleEdit()">Guardar</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="createAssignmentModal">
+        <div class="modal modal-large">
+            <h2>Crear Asignación</h2>
+            <div class="modal-content">
+                <div class="form-group">
+                    <label>Seleccione Carrera</label>
+                    <select id="createAssignmentCareer">
+                        <option value="">Seleccione una carrera</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Seleccione Grado</label>
+                    <select id="createAssignmentGrade" disabled>
+                        <option value="">Seleccione un grado</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Seleccione Ciclo</label>
+                    <select id="createAssignmentCycle">
+                        <option value="">Seleccione un ciclo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Rango de Fechas</label>
+                    <input type="text" id="createAssignmentDateRange" class="date-range-picker" placeholder="Seleccione el rango de fechas">
+                </div>
+                <div class="form-group">
+                    <label>Módulo</label>
+                    <div class="module-grid">
+                        <div class="grid-header">ASIGNATURA</div>
+                        <div class="grid-header">PROFESOR</div>
+                        <div class="grid-header">DÍAS DE LA SEMANA</div>
+                        <div class="grid-header">HORARIOS</div>
+                        <!-- Filas se añadirán dinámicamente -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button type="button" class="btn btn-delete" data-action="cancel">Cancelar</button>
+                <button type="button" class="btn" data-action="confirm">Crear</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="editAssignmentModal">
+        <div class="modal modal-large">
+            <h2>Editar Asignación</h2>
+            <div class="form-group">
+                <label>Seleccione Horario</label>
+                <select id="editAssignmentSchedule" onchange="assignmentManager.generateGrid('edit')">
+                    <option value="">Seleccione un horario</option>
+                </select>
+            </div>
+            <div id="editAssignmentGridContainer" class="grid-master-container"></div>
+            <div class="modal-buttons">
+                <button class="btn btn-delete" onclick="assignmentManager.closeModal('edit')">Cancelar</button>
+                <button class="btn" onclick="assignmentManager.updateAssignment()">Actualizar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Actualizar el modal de TimeSlots -->
+    <div class="modal-overlay" id="timeSlotModal">
+        <div class="modal">
+            <h2>Modificar TimeSlots</h2>
+            <div class="modal-body">
+                <table class="time-slot-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Hora Inicio</th>
+                            <th>Hora Fin</th>
+                        </tr>
+                    </thead>
+                    <tbody id="timeSlotTableBody">
+                        <!-- Se llenará dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-buttons">
+                <button type="button" class="btn btn-delete" data-action="cancel">Cancelar</button>
+                <button type="button" class="btn" data-action="confirm">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de edición para beneficiarios -->
+    <div class="modal-overlay" id="editBeneficiaryModal">
+        <div class="modal">
+            <h2>Editar Beneficiario</h2>
+            <input type="text" id="editBeneficiaryName" placeholder="Nombre del Beneficiario">
+            <div class="modal-buttons">
+                <button class="btn btn-delete" onclick="closeEditBeneficiaryModal()">Cancelar</button>
+                <button class="btn" onclick="saveBeneficiaryEdit()">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="createNewScheduleModal">
+    <div class="modal modal-large">
+        <h2>Crear Nuevo Horario</h2>
+        <div class="modal-content">
+            <div class="modal-top">
+                <div class="modal-left">
+                    <div class="form-group">
+                        <label>Seleccione Carrera</label>
+                        <select id="newScheduleCareer" onchange="scheduleManager.loadGrades()">
+                            <option value="">Seleccione una carrera</option>
+                            <!-- Opciones se llenarán dinámicamente -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Seleccione Grado</label>
+                        <select id="newScheduleGrade" disabled>
+                            <option value="">Seleccione un grado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Ciclo</label>
+                        <select id="newScheduleCycle">
+                            <option value="">Seleccione un ciclo</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-right">
+                    <div class="form-group">
+                        <label>Días de la Semana</label>
+                        <div class="weekdays-checkboxes">
+                            <div class="weekday-block">
+                                <label><input type="checkbox" value="Lunes">Lunes</label>
+                                <label><input type="checkbox" value="Martes">Martes</label>
+                                <label><input type="checkbox" value="Miércoles">Miércoles</label>
+                            </div>
+                            <div class="weekday-block">
+                                <label><input type="checkbox" value="Jueves">Jueves</label>
+                                <label><input type="checkbox" value="Viernes">Viernes</label>
+                                <label><input type="checkbox" value="Sábado">Sábado</label>
+                            </div>
+                            <div class="weekday-block">
+                                <label><input type="checkbox" value="Domingo">Domingo</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-bottom">
+                <div class="form-group">
+                    <label>Módulos</label>
+                    <div id="modulesList" class="modules-list"></div> <!-- Recuadro amplio para los módulos -->
+                </div>
+                <button type="button" class="btn" onclick="scheduleManager.addModule()">Agregar Módulo</button> <!-- Reubicar el botón al inferior del modal -->
+            </div>
+        </div>
+        <div class="modal-buttons">
+            <button type="button" class="btn btn-delete" onclick="scheduleManager.closeNewScheduleModal()">Cancelar</button>
+            <button type="button" class="btn" onclick="scheduleManager.saveNewSchedule()">Guardar</button>
+        </div>
+    </div>
+</div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+    
+    <!-- Core (Asegurarse de que se carga primero) -->
+    <script src="js/config/constants.js"></script>
+    
+    <!-- Resto de scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    
+    <!-- UI Components -->
+    <script src="js/ui/notifications.js"></script>
+    <script src="js/ui/modals.js"></script>
+    <script src="js/ui/forms.js"></script>
+    
+    <!-- Data Management -->
+    <script src="js/data/teachers.js"></script>
+    <script src="js/data/careers.js"></script>
+    <script src="js/assignments.js"></script> <!-- Asegurarse de que este es el archivo correcto -->
+    
+    <!-- Features -->
+    
+
+    <script src="js/schedules.js"></script> <!-- Enlace al nuevo archivo JavaScript -->
+    <script src="js/addModule.js"></script> <!-- Enlace al nuevo archivo JavaScript -->
+    
+    <!-- Main App -->
+    <script src="js/app.js"></script>
+    <script src="js/schedulepayments.js"></script>
+    <script src="js/beneficiaries.js"></script> <!-- Enlace al nuevo archivo JavaScript -->
+    <script>
+        // Asegúrate de que scheduleManager esté disponible
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.scheduleManager) {
+                window.scheduleManager.loadScheduleData();
+            }
+        });
+
+        // Define the showSection function
+        function showSection(sectionId) {
+            console.log('showSection called with:', sectionId);
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.style.display = section.id === sectionId ? 'block' : 'none';
+            });
+        }
+    </script>
+    <button id="createScheduleButton" class="btn">Crear Nuevo Horario</button>
+</body>
+</html>

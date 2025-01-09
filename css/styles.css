@@ -1,0 +1,57 @@
+/* Estilos para los botones */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-small {
+    padding: 5px 10px;
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.btn-export, .btn-pdf {
+    background-color: #3498db;
+    color: #fff;
+}
+
+/* Estilos para las notificaciones */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    z-index: 1000;
+}
+
+.notification.success {
+    background-color: #2ecc71;
+}
+
+.notification.error {
+    background-color: #e74c3c;
+}
+
+/* Estilos para la tabla de asignaciones */
+.assignments-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.assignments-table th, .assignments-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.assignments-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}

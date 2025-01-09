@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Horarios</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li class="nav-section">
+                        <span class="section-title">Administración</span>
+                        <ul>
+                            <!-- Eliminar botón de cálculo -->
+                            <!-- <li><button class="btn" onclick="showSection('calculation')">Cálculo</button></li> -->
+                            <li>
+                                <button class="btn" onclick="showSection('completedPayments')" data-section="completedPayments">
+                                    Pagos Realizados
+                                </button>
+                            </li>
+                            <li>
+                                <button class="btn" onclick="showSection('paymentSchedule')" data-section="paymentSchedule">
+                                    Programación de pagos
+                                </button>
+                            </li>
+                            <li>
+                                <button class="btn" onclick="showSection('teacherLoadCalculation')" data-section="teacherLoadCalculation">
+                                    Cálculo Carga Docentes
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-section">
+                        <span class="section-title">Académico</span>
+                        <ul>
+                            <li><button class="btn" onclick="showSection('assignments')" data-section="assignments">Asignaciones</button></li>
+                            <li><button class="btn" onclick="showSection('schedule')" data-section="schedule">Configurar Horarios</button></li>
+                        </ul>
+                    </li>
+                    <li class="nav-section">
+                        <span class="section-title">Configuraciones</span>
+                        <ul>
+                            <li><button class="btn" onclick="showSection('teachers')" data-section="teachers">Gestionar Profesores</button></li>
+                            <li><button class="btn" onclick="showSection('careers')" data-section="careers">Gestionar Carreras</button></li>
+                            <!-- Nueva opción para gestionar beneficiarios -->
+                            <li><button class="btn" onclick="showSection('beneficiaries')" data-section="beneficiaries">Gestionar Beneficiarios</button></li>
+                            <li><button class="btn" onclick="showSection('formats')" data-section="formats">Gestión de Formatos</button></li> <!-- Nuevo botón -->
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <section id="teachers" class="content-section">
+                <h1>Gestionar Profesores</h1>
+                <form id="teacherForm" class="form-group">
+                    <div class="form-inline">
+                        <input type="text" id="teacherName" placeholder="Nombre del Profesor">
+                        <button type="button" class="btn" onclick="teacherManager.addTeacher(document.getElementById('teacherName').value)">Agregar Profesor</button>
+                    </div>
+                </form>
+                <ul id="teacherList"></ul>
+            </section>
+            <section id="careers" class="content-section">
+                <h1>Gestionar Carreras</h1>
+                <form id="careerForm" class="form-group">
+                    <div class="form-inline">
+                        <input type="text" id="careerName" placeholder="Nombre de la Carrera">
+                        <button type="button" class="btn" onclick="careerManager.addCareer(document.getElementById('careerName').value)">
+                            Agregar Carrera
+                        </button>
+                    </div>
+                </form>
+                <div id="careerList" class="career-list scrollable">
+                    <!-- El contenido de esta sección se genera dinámicamente mediante JavaScript -->
+                </div>
+            </section>
+            <section id="schedule" class="content-section">
+                <h1>Configurar Horarios</h1>
+                <div id="scheduleConfig">
+                    <!-- El contenido de esta sección se genera dinámicamente mediante JavaScript -->
+                    <div id="schedulesList" class="schedules-list"></div> <!-- Añadir contenedor -->
+                </div>
+            </section>
+            <section id="assignments" class="content-section">
+                <h1>Asignaciones</h1>
+                <div class="section-header">
+                    <input type="text" id="importDate" placeholder="Seleccione una fecha">
+                    <button class="btn btn-import-assignments" onclick="assignmentManager.importAssignments()">
+                        Importar Asignaciones
+                    </button>
+                    <!-- Eliminar el botón de visualizar asignaciones -->
+                    <!-- <button class="btn btn-view-assignments" onclick="assignmentManager.viewAssignments()">
+                        Visualizar Asignaciones
+                    </button> -->
+                </div>
+                <div id="assignmentsList" class="assignments-list"></div>
+                <!-- Nueva sección para visualizar los datos de assignments.json -->
+                <div id="assignmentsDataView" class="assignments-list"></div>
+            </section>
+            <!-- Nueva sección para la gestión de formatos -->
+            <section id="formats" class="content-section">
+                <h1>Gestión de Formatos</h1>
+                <div class="form-group">
+                    <label for="formatName">Nombre del Formato</label>
+                    <input type="text" id="formatName" placeholder="Ingrese el nombre del formato">
+                </div>
+                <div class="form-group">
+                    <label for="formatContent">Contenido del Formato</label>
+                    <textarea id="formatContent" rows="10" placeholder="Ingrese el contenido del formato"></textarea>
+                </div>
+                <button class="btn" onclick="saveFormat()">Guardar Formato</button>
+                <div id="formatsList" class="formats-list">
+                    <!-- Lista de formatos guardados -->
+                </div>
+            </section>
+            <section id="teacherLoadCalculation" class="content-section">
+                <h1>
+                    Cálculo Carga Docentes
+                    <button class="btn btn-refresh" onclick="viewAssignmentsData()">Refrescar</button>
+                </h1>
+                <table id="teacherLoadTable" class="assignments-table">
+                    <!-- Se llenará con los datos de viewAssignmentsData -->
+                </table>
+            </section>
+            <section id="beneficiaries" class="content-section">
+                <h1>Gestionar Beneficiarios</h1>
+                <form id="beneficiaryForm" class="form-group">
+                    <div class="form-inline">
+                        <input type="text" id="beneficiaryName" placeholder="Nombre del Beneficiario">
+                        <button type="button" class="btn" onclick="beneficiaryManager.addBeneficiary(document.getElementById('beneficiaryName').value)">Agregar Beneficiario</button>
+                    </div>
+                </form>
+                <ul id="beneficiaryList"></ul>
+            </section>
+            <section id="paymentSchedule" class="content-section">
+                <div class="section-header">
+                    <h1>Programación de Pagos</h1>
+                    <button class="btn btn-save-payments" onclick="savePayments()">Solicitar autorización</button>
+                </div>
+                <div class="form-group">
+                    <label for="initialBalance">Saldo Inicial</label>
+                    <input type="text" id="initialBalance" placeholder="Ingrese el saldo inicial">
+                </div>
+                <div class="form-group">
+                    <label for="totalAmount">Monto Total</label>
+                    <input type="text" id="totalAmount" placeholder="Monto total" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="finalBalance">Saldo Final</label>
+                    <input type="text" id="finalBalance" placeholder="Saldo final" readonly>
+                </div>
+                <table id="paymentTable" class="assignments-table">
+                    <thead>
+                        <tr>
+                            <th>Beneficiario</th>
+                            <th>Concepto de Pago</th>
+                            <th>Monto</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Las filas se generarán dinámicamente mediante JavaScript -->
+                    </tbody>
+                </table>
+                <button class="btn" onclick="addPaymentRow()">Añadir Fila</button>
+                <table id="scholarPaymentsTable" class="assignments-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre de la Carrera</th>
+                            <th>Nombre de las Materias</th>
+                            <th>Horas</th>
+                            <th>Total</th>
+                            <th>A pagar</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Las filas se generarán dinámicamente mediante JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+            <section id="completedPayments" class="content-section">
+                <h1>Pagos Realizados</h1>
+                <table class="assignments-table">
+                    <thead>
+                        <tr>
+                            <th>CONS</th>
+                            <th>Fecha</th>
+                            <th>Beneficiario</th>
+                            <th>Concepto</th>
+                            <th>Monto</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="paymentsTableBody">
+                        <!-- Las filas se generarán dinámicamente mediante JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Modal para visualizar y editar notas -->
+            <div class="modal-overlay" id="notesModal">
+                <div class="modal modal-small">
+                    <h2>Notas</h2>
+                    <textarea id="notesContent"></textarea>
+                    <div class="modal-buttons">
+                        <button class="btn btn-cancel" onclick="closeNotesModal()">Cancelar</button>
+                        <button class="btn btn-save" onclick="saveNotes()">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="modal-overlay" id="editTeacherModal">
+        <div class="modal">
+            <h2>Editar Profesor</h2>
+            <input type="text" id="editTeacherName" placeholder="Nombre del Profesor">
+            <div class="modal-buttons">
+                <button class="btn btn-delete" onclick="closeEditModal()">Cancelar</button>
+                <button class="btn" onclick="saveTeacherEdit()">Guardar</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="createScheduleModal">
+        <div class="modal">
+            <h2>Crear Horario</h2>
+            <div class="modal-content">
+                <div class="modal-left">
+                    <div class="form-group">
+                        <label>Seleccione Carrera</label>
+                        <select id="scheduleCareer" data-schedule="create">
+                            <option value="">Seleccione una carrera</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Seleccione Grado</label>
+                        <select id="scheduleGrade" data-schedule="create" disabled>
+                            <option value="">Seleccione un grado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Ciclo</label>
+                        <select id="scheduleCycle" data-schedule="create">
+                            <option value="">Seleccione un ciclo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Días de clase</label>
+                        <div class="weekdays-selector" data-schedule="create">
+                            <!-- Se llenará dinámicamente con JS -->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Días No Laborales</label>
+                        <div id="nonWorkingDaysContainer" class="non-working-days-container">
+                            <!-- Contenedor para los datepickers de días no laborales -->
+                        </div>
+                        <button type="button" class="btn btn-add-non-working-day" data-schedule="create">
+                            Agregar Día No Laboral
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-right">
+                    <div class="form-group">
+                        <label>Módulos</label>
+                        <div id="modulesList" data-schedule="create"></div>
+                        <button type="button" class="btn btn-add-module" data-schedule="create">
+                            Agregar Módulo
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button type="button" class="btn btn-delete" data-action="cancel">Cancelar</button>
+                <button type="button" class="btn" data-action="confirm">Crear</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="editScheduleModal">
+        <div class="modal">
+            <h2>Editar Horario</h2>
+            <div class="modal-content">
+                <div class="modal-left">
+                    <div class="form-group">
+                        <label>Seleccione Carrera</label>
+                        <select id="editScheduleCareer">
+                            <option value="">Seleccione una carrera</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Seleccione Grado</label>
+                        <select id="editScheduleGrade" disabled>
+                            <option value="">Seleccione un grado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Ciclo</label>
+                        <select id="editScheduleCycle">
+                            <option value="">Seleccione un ciclo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Días de clase</label>
+                        <div class="weekdays-selector" id="editWeekdaysSelector">
+                            <!-- Se llenará dinámicamente con JS -->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Días No Laborales</label>
+                        <div id="editNonWorkingDaysContainer" class="non-working-days-container">
+                            <!-- Contenedor para los datepickers de días no laborales -->
+                        </div>
+                        <button type="button" class="btn btn-add-non-working-day" onclick="scheduleManager.addNonWorkingDay('edit')">
+                            Agregar Día No Laboral
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-right">
+                    <div class="form-group">
+                        <label>Módulos</label>
+                        <div id="editModulesList"></div>
+                        <button class="btn" onclick="scheduleManager.addNewModule(true)">Agregar Módulo</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn-delete" onclick="scheduleManager.closeEditScheduleModal()">Cancelar</button>
+                <button class="btn" onclick="scheduleManager.saveScheduleEdit()">Guardar</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="createAssignmentModal">
+        <div class="modal modal-large">
+            <h2>Crear Asignación</h2>
+            <div class="form-group">
+                <label>Seleccione Horario</label>
+                <select id="createAssignmentSchedule" onchange="assignmentManager.generateGrid('create')">
+                    <option value="">Seleccione un horario</option>
+                </select>
+            </div>
+            <div id="createAssignmentGridContainer" class="grid-master-container"></div>
+            <div class="modal-buttons">
+                <button class="btn btn-delete" onclick="assignmentManager.closeCreateAssignmentModal()">Cancelar</button>
+                <button class="btn" onclick="assignmentManager.createAssignment()">Crear</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="editAssignmentModal">
+        <div class="modal modal-large">
+            <h2>Editar Asignación</h2>
+            <div class="form-group">
+                <label>Seleccione Horario</label>
+                <select id="editAssignmentSchedule" onchange="assignmentManager.generateGrid('edit')">
+                    <option value="">Seleccione un horario</option>
+                </select>
+            </div>
+            <div id="editAssignmentGridContainer" class="grid-master-container"></div>
+            <div class="modal-buttons">
+                <button class="btn btn-delete" onclick="assignmentManager.closeModal('edit')">Cancelar</button>
+                <button class="btn" onclick="assignmentManager.updateAssignment()">Actualizar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Actualizar el modal de TimeSlots -->
+    <div class="modal-overlay" id="timeSlotModal">
+        <div class="modal">
+            <h2>Modificar TimeSlots</h2>
+            <div class="modal-body">
+                <table class="time-slot-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Hora Inicio</th>
+                            <th>Hora Fin</th>
+                        </tr>
+                    </thead>
+                    <tbody id="timeSlotTableBody">
+                        <!-- Se llenará dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-buttons">
+                <button type="button" class="btn btn-delete" data-action="cancel">Cancelar</button>
+                <button type="button" class="btn" data-action="confirm">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para ingresar el pago por hora -->
+    <div class="modal-overlay" id="calculationModal">
+        <div class="modal modal-small">
+            <h2>Base Cálculo</h2>
+            <div class="form-group">
+                <label for="paymentPerHour">Pago por Hora</label>
+                <input type="text" id="paymentPerHour" placeholder="Ingrese el pago por hora" oninput="formatCurrency(this)">
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn-delete" onclick="careerManager.closeCalculationModal()">Cancelar</button>
+                <button class="btn" onclick="careerManager.saveCalculation()">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para editar beneficiarios -->
+    <div class="modal-overlay" id="editBeneficiaryModal">
+        <div class="modal">
+            <h2>Editar Beneficiario</h2>
+            <input type="text" id="editBeneficiaryName" placeholder="Nombre del Beneficiario">
+            <div class="modal-buttons">
+                <button class="btn btn-delete" onclick="closeEditBeneficiaryModal()">Cancelar</button>
+                <button class="btn" onclick="saveBeneficiaryEdit()">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal pequeño para el botón "+" -->
+    <div class="modal-overlay" id="addPaymentModal">
+        <div class="modal modal-small">
+            <h2>Agregar Pago</h2>
+            <div class="form-group">
+                <label for="paymentCons">CONS</label>
+                <input type="text" id="paymentCons" readonly>
+            </div>
+            <div class="form-group">
+                <label for="paymentDate">Fecha</label>
+                <input type="text" id="paymentDate" placeholder="Seleccione una fecha">
+            </div>
+            <div class="form-group" style="display: none;"> <!-- Ocultar el campo de beneficiario -->
+                <label for="paymentBeneficiary">Beneficiario</label>
+                <select id="paymentBeneficiary">
+                    <option value="">Seleccione un beneficiario</option>
+                </select>
+            </div>
+            <div class="form-group" style="display: none;"> <!-- Ocultar el campo de concepto -->
+                <label for="paymentConcept">Concepto</label>
+                <input type="text" id="paymentConcept" placeholder="Concepto de pago">
+            </div>
+            <div class="form-group">
+                <label for="paymentAmount">Monto</label>
+                <input type="text" id="paymentAmount" placeholder="Monto">
+            </div>
+            <div class="form-group">
+                <label for="paymentNotes">Notas</label>
+                <textarea id="paymentNotes" rows="3" placeholder="Ingrese notas"></textarea>
+            </div>
+            <input type="hidden" id="paymentRowId"> <!-- Campo oculto para el ID de la fila -->
+            <div class="modal-buttons">
+                <button class="btn btn-cancel" onclick="closeAddPaymentModal()">Cancelar</button>
+                <button class="btn btn-paid" onclick="addPaymentto()">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal pequeño para el botón "+" en scholarPayments -->
+    <div class="modal-overlay" id="addScholarPaymentModal">
+        <div class="modal modal-small">
+            <h2>Agregar Pago de Maestro</h2>
+            <div class="form-group">
+                <label for="scholarPaymentCons">CONS</label>
+                <input type="text" id="scholarPaymentCons" readonly>
+            </div>
+            <div class="form-group">
+                <label for="scholarPaymentDate">Fecha</label>
+                <input type="text" id="scholarPaymentDate" placeholder="Seleccione una fecha">
+            </div>
+            <div class="form-group" style="display: none;"> <!-- Ocultar el campo de nombre del maestro -->
+                <label for="scholarPaymentTeacherName">Nombre del Maestro</label>
+                <input type="text" id="scholarPaymentTeacherName" readonly>
+            </div>
+            <div class="form-group" style="display: none;"> <!-- Ocultar el campo de nombre de la carrera -->
+                <label for="scholarPaymentCareerName">Nombre de la Carrera</label>
+                <input type="text" id="scholarPaymentCareerName" readonly>
+            </div>
+            <div class="form-group" style="display: none;"> <!-- Ocultar el campo de materias -->
+                <label for="scholarPaymentSubjects">Materias</label>
+                <input type="text" id="scholarPaymentSubjects" readonly>
+            </div>
+            <div class="form-group" style="display: none;"> <!-- Ocultar el campo de horas -->
+                <label for="scholarPaymentTotalHours">Horas</label>
+                <input type="text" id="scholarPaymentTotalHours" readonly>
+            </div>
+            <div class="form-group">
+                <label for="scholarPaymentTotalPf">Total</label>
+                <input type="text" id="scholarPaymentTotalPf" placeholder="Total">
+            </div>
+            <div class="form-group">
+                <label for="scholarPaymentNotes">Notas</label>
+                <textarea id="scholarPaymentNotes" rows="3" placeholder="Ingrese notas"></textarea>
+            </div>
+            <input type="hidden" id="scholarPaymentToggled"> <!-- Campo oculto para toggled -->
+            <input type="hidden" id="scholarPaymentRowId"> <!-- Campo oculto para rowId -->
+            <div class="modal-buttons">
+                <button class="btn btn-cancel" onclick="closeAddScholarPaymentModal()">Cancelar</button>
+                <button class="btn btn-paid" onclick="addScholarPaymentto()">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+    
+    <!-- Core -->
+    <script src="js/config/constants.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    
+
+    <!-- UI Components -->
+    <script src="js/ui/notifications.js"></script>
+    <script src="js/ui/modals.js"></script>
+    <script src="js/ui/forms.js"></script>
+    
+    <!-- Data Management -->
+    <script src="js/data/teachers.js"></script>
+    <script src="js/data/careers.js"></script>
+    <script src="js/data/schedules.js"></script>
+    <script src="js/data/assignments.js"></script>
+    <script src="js/data/calculations.js"></script>
+    <script src="js/data/beneficiaries.js"></script>
+    <script src="js/data/schedulepayments.js"></script> <!-- Incluir schedulepayments.js -->
+    <script src="js/data/payments.js"></script> <!-- Incluir payments.js -->
+    
+    <!-- Features -->
+    <script type="module" src="js/features/modules.js"></script>
+    <script type="module" src="js/features/schedules.js"></script>
+    
+    <!-- Main App -->
+    <script src="js/app.js"></script>
+    <script>
+        function formatCurrency(input) {
+            let value = input.value.replace(/[^0-9.]/g, '');
+            if (value) {
+                value = parseFloat(value).toFixed(2);
+                input.value = `$${value}`;
+            } else {
+                input.value = '$0.00';
+            }
+        }
+
+        $(function() {
+            $("#paymentDate").datepicker({
+                dateFormat: "yy-mm-dd"
+            });
+            $("#scholarPaymentDate").datepicker({
+                dateFormat: "yy-mm-dd"
+            });
+        });
+    </script>
+</body>
+</html>
